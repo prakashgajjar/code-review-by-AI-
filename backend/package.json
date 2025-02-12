@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "that a code review ai model review code in many programing languages , that use backend as gemini ai and i want in feature that use multipal ai modles with multiple work ",
+  "main": "App.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon App.js"
+  },
+  "keywords": [
+    "ai project",
+    "code review"
+  ],
+  "author": "prakash suthar",
+  "license": "ISC"
+}
