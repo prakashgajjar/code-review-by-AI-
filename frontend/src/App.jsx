@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
+import contextProvider from './Hooks/ConetxtProvider'
+import SearchBar from './components/SerchBar'
+import DisplayText from './components/DisplayText'
+import MainDisplay from './components/MainDisplay'
 
 const App = () => {
   const [receivedData, setReceivedData] = useState(null)
+  const [inputData , setInputData] = useState(null)
+  const [show, setShow] = useState(null);
   const getGeminiResponse = async () => {
     const response = await fetch('http://localhost:3000/ai', {
       method: 'POST',
@@ -9,7 +15,7 @@ const App = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        question: 'hii',
+        question: inputData,
         id: 1,
       }),
       credentials: 'include'
@@ -23,12 +29,13 @@ const App = () => {
   }
 
   return (
-    <div>
-      <button onClick={getGeminiResponse}>
-        Send
-      </button>
-      <p>{receivedData}</p>
-    </div>
+
+    <contextProvider.Provider value={{ getGeminiResponse, setReceivedData, receivedData , setInputData ,inputData , setShow , show }}>
+      <div className=''>
+           <MainDisplay/>
+      </div>
+    </contextProvider.Provider>
+
   )
 }
 
