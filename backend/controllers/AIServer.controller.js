@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
@@ -10,7 +9,6 @@ const aiResponse= async (req,res)=>{
     console.log('your request was submited')
     const result = await model.generateContent(question);
     const textResult = result.response.text()
-    console.log(textResult);
     res.send(textResult);
 }
 

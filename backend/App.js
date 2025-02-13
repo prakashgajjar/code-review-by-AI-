@@ -6,10 +6,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:5175'],
+    origin: ['http://localhost:3000', 'http://localhost:5175' , 'http://localhost:5174' , 'http://localhost:5173'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']  // Add other headers if needed  //
+    allowedHeaders: ['Content-Type', 'Authorization'] 
 }))
 
 app.use('/ai',homeRoutes);

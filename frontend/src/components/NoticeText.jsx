@@ -7,6 +7,4 @@ const NoticeText = () => {
         </div>
           )
         }
-
-
 export default NoticeText

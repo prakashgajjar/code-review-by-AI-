@@ -2,28 +2,25 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import contextProvider from "../Hooks/ConetxtProvider";
 
 const DisplayText = () => {
-  const { receivedData, inputData , show } = useContext(contextProvider);
+  const { receivedData, inputData, input1Data , show } = useContext(contextProvider);
   const [messages, setMessages] = useState([]); 
   const messageRef = useRef(null);
   
   useEffect(() => {
-    if (inputData) {
-      setMessages((prev) => [...prev, { text: inputData, sender: "user" }]);  
+    if (input1Data) {
+      setMessages((prev) => [...prev, { text: input1Data, sender: "user" }]);  
   }
-}, [inputData]);
-
+}, [input1Data]);
   useEffect(() => {
     if (receivedData) {
       setMessages((prev) => [...prev, { text: receivedData, sender: "ai" }]);
     }
   }, [receivedData]);
- 
   useEffect(() => {
     if (messageRef.current) {
       messageRef.current.scrollTop = messageRef.current.scrollHeight;
     }
   }, [messages]);
-
   return (
     <div className="flex justify-center mt-20">
       <div

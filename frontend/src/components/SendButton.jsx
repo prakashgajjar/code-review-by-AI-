@@ -3,14 +3,14 @@ import { useContext } from 'react'
 import contextProvider from '../Hooks/ConetxtProvider'
 
 const SendButton = () => {
-  const { getGeminiResponse ,setInputData } = useContext(contextProvider)
+  const { getGeminiResponse ,setInputData , inputData ,setInput1Data} = useContext(contextProvider)
   return (
     <div>
         <button onClick={()=>{
+          setInput1Data(inputData)
           getGeminiResponse()
           setInputData('')
-
-        }} className='bg-white w-12 h-12 rounded-full flex justify-center items-center hover:bg-opacity-60'><img src="/icons/arrow3.png" alt="" srcset="" className='rotate-180 w-12 h-8 ' /></button>
+        }} className='bg-white w-12 h-12 rounded-full flex justify-center items-center hover:bg-opacity-60'><img src="/icons/arrow3.png" className='rotate-180 w-12 h-8 ' /></button>
     </div>
   )
 }

@@ -13,7 +13,6 @@ const SerchBar = () => {
             <div className='absolute mt-[110px] ml-[960px]'>
                 <SendButton  />
             </div>
-
         </div>
     </div>
   )
